@@ -118,26 +118,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &449943208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1321036697163295012, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
-  m_PrefabInstance: {fileID: 5012367671660585502}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &449943215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449943208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 630b4199f06883944b75b826ac632584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Movement: {x: 0, y: 0}
-  Jump: 0
-  Attack: 0
 --- !u!1 &1924225500
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,17 +341,25 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
-      propertyPath: m_Size.x
-      value: 0.65625
-      objectReference: {fileID: 0}
-    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
-      propertyPath: m_Size.y
-      value: 1.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 815424164945274260, guid: 94aef1e7044bb5e41bf0e2aa229c2363, type: 3}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -416,17 +404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6994825634382315694, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1321036697163295012, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449943215}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

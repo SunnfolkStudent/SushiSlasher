@@ -18,11 +18,14 @@ public class PlayerController : MonoBehaviour
     
     private InputActions _input;
     private Rigidbody2D _rigidbody2D;
-
+    
+    private Animator _animator;
+    
     private void Start()
     {
         _input = GetComponent<InputActions>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,39 +37,18 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D.linearVelocityY = jumpSpeed;
         }
         
-        Attack();
+        UpdateAnimation();
     }
 
     private void FixedUpdate()
     {
-        _rigidbody2D.linearVelocity = _input.Movement * moveSpeed;
-    }
-
-    private void Attack()
-    {
-        if (!Physics2D.OverlapCircle(groundCheck.position, 0.2f, LayerMask.GetMask("Enemy"))) return;
-        var enemyColliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.2f, LayerMask.GetMask("Enemy"));
-
-        foreach (var enemy in enemyColliders)
-        {
-            Destroy(enemy.gameObject);
-        }
-
-        _rigidbody2D.linearVelocityY = jumpSpeed / 1.3f;
+        _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireCube(groundCheck.position, groundBoxSize);
-    }
-    
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Death"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 
     private void RestartScene()
@@ -87,11 +69,38 @@ public class PlayerController : MonoBehaviour
             RestartScene();
         }    
     }
+    
     private void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             TakeDamage();
         }    
+    }
+
+    private void UpdateAnimation()
+    {
+        if (playerIsGrounded) // This checks if the player is grounded
+        {
+            if (_input.Horizontal != 0) // This checks if we have any input
+            {
+                _animator.Play("Player_Walk"); // If we have input set our animation to Walk
+            }
+            else // This checks if we have no input
+            {
+                _animator.Play("Player_Idle"); // If we have no input, set out animation to Idle
+            }
+        }
+        else // this checks if the player is Not grounded
+        {
+            if (_rigidbody2D.linearVelocityY > 0) // This checks our velocity and if it is above 0
+            {
+                _animator.Play("Player_Jump"); // If we are moving upwards, set animation to Jump
+            }
+            else // This checks our velocity and if it is below 0
+            {
+                _animator.Play("Player_Fall"); // If we are moving downwards, set animation to Fall
+            }
+        }
     }
 }
