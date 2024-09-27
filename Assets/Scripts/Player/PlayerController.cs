@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
         
         if (_input.Jump && playerIsGrounded)
         {
-            print("blergh");
             _audioSource.PlayOneShot(playerJumpSounds[Random.Range(0, playerHitSounds.Length)]);
             _rigidbody2D.linearVelocityY = jumpSpeed;
         }
