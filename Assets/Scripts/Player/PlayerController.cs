@@ -43,12 +43,11 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
     }
-    
+
     private void Update()
     {
-        
-        playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize,0f, whatIsGround);
-        
+        playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
+
         if (_input.Jump && playerIsGrounded)
         {
             _audioSource.PlayOneShot(playerJumpSounds[Random.Range(0, playerHitSounds.Length)]);
@@ -65,6 +64,7 @@ public class PlayerController : MonoBehaviour
         }
         
         UpdateAnimation();
+        
     }
 
     private void FixedUpdate()
