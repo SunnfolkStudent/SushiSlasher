@@ -1,40 +1,68 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement")]
     public float moveSpeed = 5f;
     public float jumpSpeed = 7f;
-
+    
+    [Header("Health")]
     public int playerHealth = 3;
     public float damageCooldown = 0.3f;
     private float _damageCooldownTimer;
     
+    [Header("Ground Check")]
     public bool playerIsGrounded;
     public Transform groundCheck;
     public LayerMask whatIsGround;
     public Vector2 groundBoxSize = new Vector2(0.8f, 0.2f);
     
+    [Header("Components")]
     private InputActions _input;
     private Rigidbody2D _rigidbody2D;
     
+    [Header("Audio")]
+    public AudioClip[] playerHitSounds;
+    public AudioClip[] playerJumpSounds;
+    //public AudioClip playerDeathSound;
+    private AudioSource _audioSource;
+    
+    [Header("Animation")]
     private Animator _animator;
+    
+    private bool isFacingRight = true;
     
     private void Start()
     {
         _input = GetComponent<InputActions>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
-
+    
     private void Update()
     {
+        
         playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize,0f, whatIsGround);
         
         if (_input.Jump && playerIsGrounded)
         {
+            print("blergh");
+            _audioSource.PlayOneShot(playerJumpSounds[Random.Range(0, playerHitSounds.Length)]);
             _rigidbody2D.linearVelocityY = jumpSpeed;
+        }
+        
+        if (!isFacingRight && _rigidbody2D.linearVelocityX > 0)
+        {
+            Flip();
+        }
+        else if (isFacingRight && _rigidbody2D.linearVelocityX < 0)
+        {
+            Flip();
         }
         
         UpdateAnimation();
@@ -45,6 +73,14 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
     }
 
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
@@ -61,6 +97,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time > _damageCooldownTimer)
         {
             playerHealth -= 1;
+            _audioSource.PlayOneShot(playerHitSounds[Random.Range(0, playerHitSounds.Length)]);
             _damageCooldownTimer = Time.time + damageCooldown;
         }
 
