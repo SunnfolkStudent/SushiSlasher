@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] playerHitSounds;
     public AudioClip[] playerJumpSounds;
+    public AudioClip backgroundMusic;
     //public AudioClip playerDeathSound;
     private AudioSource _audioSource;
     
@@ -120,11 +121,11 @@ public class PlayerController : MonoBehaviour
         {
             if (_input.Horizontal != 0) // This checks if we have any input
             {
-                _animator.Play("Player_Walk"); // If we have input set our animation to Walk
+                _animator.Play("samurai_run"); // If we have input set our animation to Walk
             }
             else // This checks if we have no input
             {
-                _animator.Play("Player_Idle"); // If we have no input, set out animation to Idle
+                _animator.Play("samurai_idle"); // If we have no input, set out animation to Idle
             }
         }
         else // this checks if the player is Not grounded
