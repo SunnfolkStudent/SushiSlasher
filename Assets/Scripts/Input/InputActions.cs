@@ -5,6 +5,7 @@ public class InputActions : MonoBehaviour
     private InputSystem_Actions _inputSystem;
 
     public float Horizontal;
+    public float Vertical;
     
     public bool Jump;
     public bool Attack;
@@ -13,6 +14,7 @@ public class InputActions : MonoBehaviour
     private void Update()
     {
         //Pause = _inputSystem.Player.Settings.WasPressedThisFrame();
+        Vertical = _inputSystem.Player.Move.ReadValue<Vector2>().y;
         Horizontal = _inputSystem.Player.Move.ReadValue<Vector2>().x;
         Jump = _inputSystem.Player.Jump.WasPressedThisFrame();
         Attack = _inputSystem.Player.Attack.WasPressedThisFrame();
