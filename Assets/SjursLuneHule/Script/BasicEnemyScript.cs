@@ -25,6 +25,4 @@ public class BasicEnemyScript : MonoBehaviour
             ScoreManager.score += 100;//adds a score of 100
         }
     }
-    
-
 }

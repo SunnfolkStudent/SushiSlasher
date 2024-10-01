@@ -138,6 +138,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpSpeed: 7
+  isJumping: 0
+  jumpTimer: 0
+  jumpTime: 0.5
   playerHealth: 3
   damageCooldown: 0.3
   playerIsGrounded: 0
@@ -153,7 +156,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b0270e164b1360a4b845f3eee309fa34, type: 3}
   - {fileID: 8300000, guid: d91c0da3024bf6548afe39874f33f653, type: 3}
   - {fileID: 8300000, guid: a7240e0588548e347bda31e6fafac66e, type: 3}
-  backgroundMusic: {fileID: 0}
 --- !u!95 &5128585367902783841
 Animator:
   serializedVersion: 7
@@ -192,6 +194,7 @@ MonoBehaviour:
   Vertical: 0
   Jump: 0
   Attack: 0
+  Play: 0
 --- !u!82 &3691094771441638045
 AudioSource:
   m_ObjectHideFlags: 0

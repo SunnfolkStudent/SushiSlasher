@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 5f;
-    public float jumpSpeed = 7f;
+    public float jumpSpeed = 7f; // 7.9f
     
     [Header("Health")]
     public int playerHealth = 3;
@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] playerHitSounds;
     public AudioClip[] playerJumpSounds;
-    public AudioClip backgroundMusic;
     //public AudioClip playerDeathSound;
     private AudioSource _audioSource;
     
@@ -48,11 +47,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
-
+        
         if (_input.Jump && playerIsGrounded)
         {
-            _audioSource.PlayOneShot(playerJumpSounds[Random.Range(0, playerHitSounds.Length)]);
+            _audioSource.PlayOneShot(playerHitSounds[Random.Range(0, playerHitSounds.Length)]);
             _rigidbody2D.linearVelocityY = jumpSpeed;
+        } 
+        else if (_input.releaseJump && !playerIsGrounded && _rigidbody2D.linearVelocity.y > 0f)
+        {
+            _rigidbody2D.linearVelocityY /= 3f; //øk det for å hoppe mindre
         }
         
         if (!isFacingRight && _rigidbody2D.linearVelocityX > 0)

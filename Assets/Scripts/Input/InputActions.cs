@@ -8,7 +8,9 @@ public class InputActions : MonoBehaviour
     public float Vertical;
     
     public bool Jump;
+    public bool releaseJump;
     public bool Attack;
+    public bool Play;
     //public static bool Pause; // static makes it accessible to all script, this is the best way of doing it, less code in the scripts where it's used, used in PauseMenu
     
     private void Update()
@@ -17,7 +19,9 @@ public class InputActions : MonoBehaviour
         Vertical = _inputSystem.Player.Move.ReadValue<Vector2>().y;
         Horizontal = _inputSystem.Player.Move.ReadValue<Vector2>().x;
         Jump = _inputSystem.Player.Jump.WasPressedThisFrame();
+        releaseJump = _inputSystem.Player.Jump.WasReleasedThisFrame();
         Attack = _inputSystem.Player.Attack.WasPressedThisFrame();
+        Play = _inputSystem.Player.Play.WasPressedThisFrame();
     }
 
     private void Awake() { _inputSystem = new InputSystem_Actions(); }
