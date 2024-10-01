@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 5fb03e5f36e87724da3521841c106287
+guid: 9648968fb36996a4986a43c5f0671c90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2851217748626246562
-    second: samurai_run-Sheet_0
+      213: -8215540191396373432
+    second: samurai_attack_0
   - first:
-      213: -2866000723297305514
-    second: samurai_run-Sheet_1
+      213: -5783284300907867961
+    second: samurai_attack_1
   - first:
-      213: 2185984608137035785
-    second: samurai_run-Sheet_2
+      213: -8693359341526951991
+    second: samurai_attack_2
   - first:
-      213: -612465775273640699
-    second: samurai_run-Sheet_3
+      213: 495465498726065323
+    second: samurai_attack_3
   - first:
-      213: -3098575037899392084
-    second: samurai_run-Sheet_4
+      213: -7353695350614458469
+    second: samurai_attack_4
   - first:
-      213: 7089453893619397927
-    second: samurai_run-Sheet_5
+      213: 546242586832932264
+    second: samurai_attack_5
+  - first:
+      213: -1277799441993653458
+    second: samurai_attack_6
+  - first:
+      213: -8272004313082795486
+    second: samurai_attack_7
+  - first:
+      213: 8951731007673315554
+    second: samurai_attack_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,12 +150,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: samurai_run_0
+      name: samurai_attack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84cdfd549b98cfd80800000000000000
+      internalID: -8215540191396373432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_attack_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
         height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -154,65 +185,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9fc110b10b9df1a43bbb1a209f420624
-      internalID: 135681219
+      spriteID: 7c01b49c195adbfa0800000000000000
+      internalID: -5783284300907867961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: samurai_run_1
+      name: samurai_attack_2
       rect:
         serializedVersion: 2
-        x: 21
+        x: 75
         y: 0
         width: 21
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65489dca8e82e954a8d57afb7e768fe6
-      internalID: 254435011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_2
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 20
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3b5065660522bb49a56e14b6db9519b
-      internalID: 106225699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_3
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 20
         height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -220,54 +207,142 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a0f137b1def230a4ba7134f6f26280f9
-      internalID: -1816884537
+      spriteID: 9c7567ffcbbfa5780800000000000000
+      internalID: -8693359341526951991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: samurai_run_4
+      name: samurai_attack_3
       rect:
         serializedVersion: 2
-        x: 84
+        x: 107
         y: 0
         width: 21
-        height: 30
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 356009b8f76e11e42a092288e5aa1009
-      internalID: 495847004
+      spriteID: ba4670afe3f30e600800000000000000
+      internalID: 495465498726065323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: samurai_run_5
+      name: samurai_attack_4
       rect:
         serializedVersion: 2
-        x: 105
+        x: 128
         y: 0
-        width: 20
-        height: 31
+        width: 32
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ff042bf8c471ce240b7080cf786522dd
-      internalID: 1060327456
+      spriteID: b9ffe284a0d62f990800000000000000
+      internalID: -7353695350614458469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_attack_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad0e551db4a49700800000000000000
+      internalID: 546242586832932264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_attack_6
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e23a6c57d28544ee0800000000000000
+      internalID: -1277799441993653458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_attack_7
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 0
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a633a77efe33d80800000000000000
+      internalID: -8272004313082795486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_attack_8
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0b7355cefea3c70800000000000000
+      internalID: 8951731007673315554
       vertices: []
       indices: 
       edges: []
@@ -276,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4af5aa9d353a0774ca05b9327689fcab
+    spriteID: add589c3dcbf45144977e89e918137a0
     internalID: 0
     vertices: []
     indices: 
@@ -286,12 +361,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      samurai_run_0: 135681219
-      samurai_run_1: 254435011
-      samurai_run_2: 106225699
-      samurai_run_3: -1816884537
-      samurai_run_4: 495847004
-      samurai_run_5: 1060327456
+      samurai_attack_0: -8215540191396373432
+      samurai_attack_1: -5783284300907867961
+      samurai_attack_2: -8693359341526951991
+      samurai_attack_3: 495465498726065323
+      samurai_attack_4: -7353695350614458469
+      samurai_attack_5: 546242586832932264
+      samurai_attack_6: -1277799441993653458
+      samurai_attack_7: -8272004313082795486
+      samurai_attack_8: 8951731007673315554
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

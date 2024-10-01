@@ -138,9 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpSpeed: 7
-  isJumping: 0
-  jumpTimer: 0
-  jumpTime: 0.5
   playerHealth: 3
   damageCooldown: 0.3
   playerIsGrounded: 0
@@ -193,6 +190,7 @@ MonoBehaviour:
   Horizontal: 0
   Vertical: 0
   Jump: 0
+  releaseJump: 0
   Attack: 0
   Play: 0
 --- !u!82 &3691094771441638045

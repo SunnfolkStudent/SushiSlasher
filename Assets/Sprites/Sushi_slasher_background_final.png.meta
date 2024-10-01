@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 5fb03e5f36e87724da3521841c106287
+guid: 59c40adcdd03f7a40b61cde4a7fbd66e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2851217748626246562
-    second: samurai_run-Sheet_0
-  - first:
-      213: -2866000723297305514
-    second: samurai_run-Sheet_1
-  - first:
-      213: 2185984608137035785
-    second: samurai_run-Sheet_2
-  - first:
-      213: -612465775273640699
-    second: samurai_run-Sheet_3
-  - first:
-      213: -3098575037899392084
-    second: samurai_run-Sheet_4
-  - first:
-      213: 7089453893619397927
-    second: samurai_run-Sheet_5
+      213: 1895580384951627040
+    second: Sushi_slasher_background_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -141,133 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: samurai_run_0
+      name: Sushi_slasher_background_final_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
-        height: 29
+        width: 480
+        height: 270
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9fc110b10b9df1a43bbb1a209f420624
-      internalID: 135681219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 0
-        width: 21
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65489dca8e82e954a8d57afb7e768fe6
-      internalID: 254435011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_2
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 20
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3b5065660522bb49a56e14b6db9519b
-      internalID: 106225699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_3
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 20
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0f137b1def230a4ba7134f6f26280f9
-      internalID: -1816884537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_4
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 21
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 356009b8f76e11e42a092288e5aa1009
-      internalID: 495847004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurai_run_5
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 0
-        width: 20
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff042bf8c471ce240b7080cf786522dd
-      internalID: 1060327456
+      spriteID: 02d6d3021547e4a10800000000000000
+      internalID: 1895580384951627040
       vertices: []
       indices: 
       edges: []
@@ -276,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4af5aa9d353a0774ca05b9327689fcab
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -286,12 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      samurai_run_0: 135681219
-      samurai_run_1: 254435011
-      samurai_run_2: 106225699
-      samurai_run_3: -1816884537
-      samurai_run_4: 495847004
-      samurai_run_5: 1060327456
+      Sushi_slasher_background_final_0: 1895580384951627040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
