@@ -58,17 +58,15 @@ public class PlayerController : MonoBehaviour
             _rigidbody2D.linearVelocityY /= 3f; //øk det for å hoppe mindre
         }
         
-        if (!isFacingRight && _rigidbody2D.linearVelocityX > 0)
+        switch (isFacingRight)
         {
-            Flip();
-        }
-        else if (isFacingRight && _rigidbody2D.linearVelocityX < 0)
-        {
-            Flip();
+            case false when _rigidbody2D.linearVelocityX > 0:
+            case true when _rigidbody2D.linearVelocityX < 0:
+                Flip();
+                break;
         }
         
         UpdateAnimation();
-        
     }
 
     private void FixedUpdate()
