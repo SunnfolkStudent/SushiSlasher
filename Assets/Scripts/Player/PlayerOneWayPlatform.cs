@@ -6,7 +6,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
     private InputActions _input;
     private GameObject currentOneWayPlatform;
 
-    [SerializeField] private CircleCollider2D playerCollider;
+    [SerializeField] private BoxCollider2D playerCollider;
 
     private void Start()
     {
@@ -45,7 +45,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
         BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
         
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
-        yield return new WaitForSeconds(0.75f); // This needs to be increased or decreased depending on player and platform size, if this is wrong the player will get stuck inside the platform, instead of falling through
+        yield return new WaitForSeconds(0.75f); // This needs to be increased or decreased depending on player and platform size, if this is wrong the player will get stuck inside the platform instead of falling through
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
     }
     

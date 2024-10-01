@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 5f;
-    public float jumpSpeed = 7f;
+    public float jumpSpeed = 7f; // 7.9f
     
     [Header("Health")]
     public int playerHealth = 3;
@@ -47,11 +47,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
-
+        
         if (_input.Jump && playerIsGrounded)
         {
-            _audioSource.PlayOneShot(playerJumpSounds[Random.Range(0, playerHitSounds.Length)]);
+            _audioSource.PlayOneShot(playerHitSounds[Random.Range(0, playerHitSounds.Length)]);
             _rigidbody2D.linearVelocityY = jumpSpeed;
+        } 
+        else if (_input.releaseJump && !playerIsGrounded && _rigidbody2D.linearVelocity.y > 0f)
+        {
+            _rigidbody2D.linearVelocityY /= 3f; //øk det for å hoppe mindre
         }
         
         if (!isFacingRight && _rigidbody2D.linearVelocityX > 0)
@@ -120,11 +124,11 @@ public class PlayerController : MonoBehaviour
         {
             if (_input.Horizontal != 0) // This checks if we have any input
             {
-                _animator.Play("Player_Walk"); // If we have input set our animation to Walk
+                _animator.Play("samurai_run"); // If we have input set our animation to Walk
             }
             else // This checks if we have no input
             {
-                _animator.Play("Player_Idle"); // If we have no input, set out animation to Idle
+                _animator.Play("samurai_idle"); // If we have no input, set out animation to Idle
             }
         }
         else // this checks if the player is Not grounded
