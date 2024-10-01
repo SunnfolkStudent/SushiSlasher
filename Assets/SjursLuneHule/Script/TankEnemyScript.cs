@@ -4,7 +4,9 @@ public class TankEnemyScript : MonoBehaviour
 {
     private float speed = 10f; //dictates speed of enemy
     public Rigidbody2D rb; //gives it interaction with its rigidbody?
-    public float health = 3;
+    private int enemyHealth = 3;
+    private float damageCooldown = 0f;
+    private float _damageCooldownTimer;
     
     private void Start()
     {
@@ -15,18 +17,35 @@ public class TankEnemyScript : MonoBehaviour
         rb.linearVelocityX = speed;//sets the enemys speed along the X,axis to the variable speed
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void TakeDamage()
     {
-        if(other.gameObject.CompareTag("KillBox") == false)//checks if the enemy has collided with a killbox or other
+        if (Time.time > _damageCooldownTimer)
         {
-            Destroy(gameObject);//destroys the enemy
-            Destroy(other.gameObject);//destroys what it hit
-            ScoreManager.score += 200;//adds a score of 200
+            enemyHealth -= 1;
+            _damageCooldownTimer = Time.time + damageCooldown;
         }
 
+        if (enemyHealth < 0)
+        {
+            Destroy(gameObject);
+            ScoreManager.score += 400;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
         if (other.gameObject.CompareTag("KillBox") == true)
         {
-            rb.linearVelocityX = speed;
+            speed *= -1;
+            transform.localScale = new Vector2(transform.localScale.x * -1f, 1f);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("KillBox") == false)
+        {
+            TakeDamage();
+            Destroy(other.gameObject);
         }
     }
 }
