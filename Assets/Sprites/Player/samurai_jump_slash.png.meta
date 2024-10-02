@@ -141,10 +141,10 @@ TextureImporter:
       name: samurai_jump_slash_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 0
-        width: 21
-        height: 27
+        width: 19
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: samurai_jump_slash_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 29
         y: 0
-        width: 26
-        height: 31
+        width: 24
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,10 +185,10 @@ TextureImporter:
       name: samurai_jump_slash_2
       rect:
         serializedVersion: 2
-        x: 58
+        x: 59
         y: 0
-        width: 25
-        height: 32
+        width: 23
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,9 +207,9 @@ TextureImporter:
       name: samurai_jump_slash_3
       rect:
         serializedVersion: 2
-        x: 87
+        x: 88
         y: 0
-        width: 29
+        width: 27
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: samurai_jump_slash_4
       rect:
         serializedVersion: 2
-        x: 117
+        x: 118
         y: 0
-        width: 28
-        height: 27
+        width: 27
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1b85487213aa40843ab3372d4f00b306
     internalID: 0
     vertices: []
     indices: 

@@ -141,9 +141,9 @@ TextureImporter:
       name: samurai_first_slash_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 4
         y: 0
-        width: 19
+        width: 17
         height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: samurai_first_slash_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 23
-        height: 29
+        width: 21
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,9 +185,9 @@ TextureImporter:
       name: samurai_first_slash_2
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 23
+        width: 21
         height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -207,9 +207,9 @@ TextureImporter:
       name: samurai_first_slash_3
       rect:
         serializedVersion: 2
-        x: 95
+        x: 96
         y: 0
-        width: 34
+        width: 32
         height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: samurai_first_slash_4
       rect:
         serializedVersion: 2
-        x: 127
+        x: 128
         y: 0
-        width: 33
-        height: 28
+        width: 32
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bdd415f60d5853e4baa3239fad44dea3
     internalID: 0
     vertices: []
     indices: 
