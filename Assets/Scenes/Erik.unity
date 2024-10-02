@@ -792,14 +792,30 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.375, y: 1}
-    newSize: {x: 0.375, y: 1}
+    oldSize: {x: 0.46875, y: 1}
+    newSize: {x: 0.46875, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.37902677, y: 1.0021794}
   m_EdgeRadius: 0
+--- !u!95 &1183924193 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5128585367902783841, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+  m_PrefabInstance: {fileID: 5012367671660585502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1183924194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+  m_PrefabInstance: {fileID: 5012367671660585502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183924174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8829026b7d28e74448428cd2e1880d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1261024680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1497,18 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c3f013f41f930b44f91d39a39871966b, type: 3}
+    - target: {fileID: 2156364613922807265, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3691094771441638045, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: Loop
       value: 1
@@ -1534,8 +1562,40 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1183924193}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: jumpSpeed
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1183924194}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLanding
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6260692413490065274, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: 'hearts.Array.data[0]'
@@ -1561,10 +1621,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6531438816807840209, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.46875
+      objectReference: {fileID: 0}
     - target: {fileID: 6994825634382315694, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6200000, guid: 913e3584cc8ec5641a855a96a8f1340a, type: 2}
     - target: {fileID: 6994825634382315694, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: m_GravityScale
       value: 1.8
