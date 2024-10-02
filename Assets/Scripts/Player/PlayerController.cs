@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] playerHitSounds;
     public AudioClip[] playerJumpSounds;
+    public AudioClip[] playerSlashSounds;
     //public AudioClip playerDeathSound;
     private AudioSource _audioSource;
     
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Attacking")]
     public float attackCooldown = 1f;
-    private int attackCounter = 0;
+    //private int attackCounter = 0;
     private float _attackCooldownTimer;
     
     private bool isFacingRight = true;
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
     
-    //TODO: Put jumping in into it's own functions like attacking to be able to implement separate jump attack
+    //TODO: Put jumping into it's own functions like attacking to be able to implement separate jump attack
     
     private void Update()
     {
@@ -143,10 +144,11 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-            //attackCounter += 1;
-            //_animator.SetInteger("Slash", attackCounter);
-            _animator.SetBool("isAttacking", true);
-            Invoke("AttackEnd", 1f);
+        _audioSource.PlayOneShot(playerSlashSounds[Random.Range(0, playerSlashSounds.Length)]);
+        //attackCounter += 1;
+        //_animator.SetInteger("Slash", attackCounter);
+        _animator.SetBool("isAttacking", true);
+        Invoke("AttackEnd", 1f);
     }
 
     private void AttackEnd()
