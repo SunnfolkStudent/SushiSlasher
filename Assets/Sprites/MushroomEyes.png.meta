@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MushroomEyes_0: -7643805851925054014
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
