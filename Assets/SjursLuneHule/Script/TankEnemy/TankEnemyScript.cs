@@ -28,10 +28,10 @@ public class TankEnemyScript : MonoBehaviour
         if (enemyHealth < 0)
         {
             Destroy(gameObject);
-            ScoreManager.score += 400;
+            ScoreManager.Score += 400;
         }
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("KillBox") == true)
         {
@@ -40,9 +40,9 @@ public class TankEnemyScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("KillBox") == false)
+        if (other.gameObject.CompareTag("Player") == true)
         {
             TakeDamage();
             Destroy(other.gameObject);

@@ -11,16 +11,16 @@ public class FlyingEnemyScript : MonoBehaviour
     }
      void FixedUpdate()
      {
-         rb.linearVelocityX = speed;//sets the enemys speed along the X,axis to the variable speed
+         rb.linearVelocityX = speed; //sets the enemys speed along the X,axis to the variable speed
      }
 
-     private void OnCollisionEnter2D(Collision2D other)
+     private void OnTriggerEnter2D(Collider2D other)
      {
          if(other.gameObject.CompareTag("KillBox") == false)//checks if the enemy has collided with a killbox or other
          {
              Destroy(gameObject);//destroys the enemy
              Destroy(other.gameObject);//destroys what it hit
-             ScoreManager.score += 200;//adds a score of 200
+             ScoreManager.Score += 200;//adds a score of 200
          }
      }
 }

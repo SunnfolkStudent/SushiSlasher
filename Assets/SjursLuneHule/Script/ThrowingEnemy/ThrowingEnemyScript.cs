@@ -33,4 +33,14 @@ public class ThrowingEnemyScript : MonoBehaviour
     {
         rb.linearVelocityX = speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") == true)
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+            ScoreManager.Score += 250;
+        }
+    }
 }
