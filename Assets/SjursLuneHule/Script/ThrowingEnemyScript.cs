@@ -21,6 +21,7 @@ public class ThrowingEnemyScript : MonoBehaviour
 
     private void Update()
     {
+        if (timeCounter < Time.time)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
             Instantiate(bulletPrefab, spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private float moveSpeed = 8f;
+    private float moveSpeed = 10f;
     private float despawnTime = 8f;
     public Rigidbody2D rigidBody2D;
 
@@ -16,7 +16,7 @@ public class BulletController : MonoBehaviour
 
     private void Update()
     {
-        rigidBody2D.linearVelocity = Vector2.down * moveSpeed;
+        rigidBody2D.linearVelocity = Vector2.right * moveSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
