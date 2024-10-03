@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -43,9 +39,6 @@ public class PlayerController : MonoBehaviour
     public float attackCooldown = 1f;
     //private int attackCounter = 0;
     private float _attackCooldownTimer;
-    
-    public float jumpAttackCooldown = 1f;
-    private float _jumpAttackCooldownTimer;
     
     private bool isFacingRight = true;
     
@@ -159,7 +152,7 @@ public class PlayerController : MonoBehaviour
         //attackCounter += 1;
         //_animator.SetInteger("Slash", attackCounter);
         _animator.SetBool("isAttacking", true);
-        Invoke("AttackEnd", 1f);
+        Invoke("AttackEnd", 0.6f);
     }
 
     private void AttackEnd()
