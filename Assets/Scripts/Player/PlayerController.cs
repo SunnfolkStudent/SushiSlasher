@@ -162,8 +162,27 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            RestartScene();
+            //RestartScene();
+            OnDeath();
         }    
+    }
+    
+    private void OnDeath()
+    {
+        if (ScoreManager.Score <= 1000)
+        {
+            SceneManager.LoadScene("Scenes/EndScreenLowScore");
+        }
+
+        if (ScoreManager.Score >= 1000 && ScoreManager.Score <= 5000)
+        {
+            SceneManager.LoadScene("Scenes/EndSceneMediumScore");
+        }
+
+        if (ScoreManager.Score >= 5000)
+        {
+            SceneManager.LoadScene("Scenes/EndSceneHighScore");
+        }
     }
     
     private void OnTriggerStay2D(Collider2D other)
