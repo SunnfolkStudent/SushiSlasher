@@ -94,10 +94,24 @@ public class PlayerController : MonoBehaviour
         
         _animator.SetFloat("SpeedY", Mathf.Abs(_rigidbody2D.linearVelocityY));
         _animator.SetFloat("Speed", Mathf.Abs(_rigidbody2D.linearVelocityX));
-
+        
+        /* TODO: Redo into using slash animation polygon collider instead
         if (attacking)
         {
             var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 2f, LayerMask.GetMask("Enemy"));
+            if (enemies != null)
+            {
+                foreach (var enemy in enemies)
+                {
+                    Destroy(enemy.gameObject);
+                }
+            }
+        }
+        */
+        
+        if (attacking)
+        {
+            var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 0.2f, LayerMask.GetMask("Enemy"));
             if (enemies != null)
             {
                 foreach (var enemy in enemies)

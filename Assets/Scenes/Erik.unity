@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 1924225503}
   - component: {fileID: 1924225502}
   - component: {fileID: 1924225501}
+  - component: {fileID: 1924225505}
   m_Layer: 0
   m_Name: Pixel Perfect Camera
   m_TagString: Untagged
@@ -1992,6 +1993,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1924225505
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924225500}
+  m_Enabled: 0
 --- !u!1 &1977562045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2361,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 1183924186}
+    - target: {fileID: 8272053698098257733, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
