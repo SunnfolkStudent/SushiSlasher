@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TankEnemyScript : MonoBehaviour
@@ -28,13 +29,6 @@ public class TankEnemyScript : MonoBehaviour
             enemyHealth -= 1;
             _damageCooldownTimer = Time.time + damageCooldown;
         }
-
-        if (enemyHealth < 0)
-        {
-            Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
-            Destroy(gameObject);
-            ScoreManager.Score += 400;
-        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,5 +46,10 @@ public class TankEnemyScript : MonoBehaviour
             TakeDamage();
             Destroy(other.gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        ScoreManager.Score += 400;
     }
 }

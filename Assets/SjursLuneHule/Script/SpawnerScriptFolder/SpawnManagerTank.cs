@@ -11,7 +11,7 @@ public class SpawnManagerTank : MonoBehaviour
     private void Update()
     {
         
-        if (timeCounter < Time.time && ScoreManager.Score >=6000)
+        if (timeCounter < Time.time && ScoreManager.Score >=3000)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
             Instantiate(enemyPrefab, spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
