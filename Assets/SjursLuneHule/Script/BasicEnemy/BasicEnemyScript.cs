@@ -21,9 +21,9 @@ public class BasicEnemyScript : MonoBehaviour
         rb.linearVelocityX = speed;//sets the movement to move along the X,axis * speed
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("KillBox") == false)//checks if enemy has hit a kill box
+        if (other.gameObject.CompareTag("Player") == true)//checks if enemy has hit a kill box
         {
             
             var clone = Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
@@ -31,7 +31,7 @@ public class BasicEnemyScript : MonoBehaviour
             
             Destroy(gameObject);//destroys enemy
             Destroy(other.gameObject);//destroys gameobject enemy has hit
-            ScoreManager.score += 100;//adds a score of 100
+            ScoreManager.Score += 100;//adds a score of 100
         }
     }
 }
