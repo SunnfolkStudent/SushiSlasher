@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7387625976825968399}
   - component: {fileID: 1024949160707165748}
   - component: {fileID: 1747171764549998508}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TankeEnemyReversed
-  m_TagString: TankEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

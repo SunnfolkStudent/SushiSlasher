@@ -18,21 +18,7 @@ public class BasicEnemyScriptReversed : MonoBehaviour
     {
         rb.linearVelocityX = speed;//sets the movement to move along the X,axis * speed
     }
-    
-    /*
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player") == true)//checks if enemy has hit a kill box
-        {
-            
-            Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
-            
-            Destroy(gameObject);//destroys enemy
-            ScoreManager.Score += 100;//adds a score of 100
-        }
-    }
-    */
-    
+
     private void OnDestroy()
     {
         Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 

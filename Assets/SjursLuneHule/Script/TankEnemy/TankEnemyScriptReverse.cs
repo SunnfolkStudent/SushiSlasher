@@ -24,12 +24,6 @@ public class TankEnemyScriptReverse : MonoBehaviour
             enemyHealth -= 1;
             _damageCooldownTimer = Time.time + damageCooldown;
         }
-
-        if (enemyHealth < 0)
-        {
-            Destroy(gameObject);
-            ScoreManager.Score += 400;
-        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -47,5 +41,10 @@ public class TankEnemyScriptReverse : MonoBehaviour
             TakeDamage();
             Destroy(other.gameObject);
         }
+    }
+    
+    private void OnDestroy()
+    {
+        ScoreManager.Score += 400;
     }
 }

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3963631079278516046}
   - component: {fileID: 1220783199059514978}
   - component: {fileID: 7454719180046186436}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlyingEnemyReversed
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

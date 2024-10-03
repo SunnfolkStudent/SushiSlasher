@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -94,24 +95,10 @@ public class PlayerController : MonoBehaviour
         
         _animator.SetFloat("SpeedY", Mathf.Abs(_rigidbody2D.linearVelocityY));
         _animator.SetFloat("Speed", Mathf.Abs(_rigidbody2D.linearVelocityX));
-        
-        /* TODO: Redo into using slash animation polygon collider instead
+
         if (attacking)
         {
             var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 2f, LayerMask.GetMask("Enemy"));
-            if (enemies != null)
-            {
-                foreach (var enemy in enemies)
-                {
-                    Destroy(enemy.gameObject);
-                }
-            }
-        }
-        */
-        
-        if (attacking)
-        {
-            var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 0.2f, LayerMask.GetMask("Enemy"));
             if (enemies != null)
             {
                 foreach (var enemy in enemies)
@@ -162,27 +149,8 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            //RestartScene();
             OnDeath();
         }    
-    }
-    
-    private void OnDeath()
-    {
-        if (ScoreManager.Score <= 1000)
-        {
-            SceneManager.LoadScene("Scenes/EndScreenLowScore");
-        }
-
-        if (ScoreManager.Score >= 1000 && ScoreManager.Score <= 5000)
-        {
-            SceneManager.LoadScene("Scenes/EndSceneMediumScore");
-        }
-
-        if (ScoreManager.Score >= 5000)
-        {
-            SceneManager.LoadScene("Scenes/EndSceneHighScore");
-        }
     }
     
     private void OnTriggerStay2D(Collider2D other)
@@ -208,5 +176,23 @@ public class PlayerController : MonoBehaviour
         attacking = false;
         //attackCounter = 0;
         _animator.SetBool("isAttacking", false);
+    }
+
+    private void OnDeath()
+    {
+        if (ScoreManager.Score <= 1000)
+        {
+            SceneManager.LoadScene("Scenes/EndScreenLowScore");
+        }
+
+        if (ScoreManager.Score >= 1000 && ScoreManager.Score <= 5000)
+        {
+            SceneManager.LoadScene("Scenes/EndSceneMediumScore");
+        }
+
+        if (ScoreManager.Score >= 5000)
+        {
+            SceneManager.LoadScene("Scenes/EndSceneHighScore");
+        }
     }
 }
