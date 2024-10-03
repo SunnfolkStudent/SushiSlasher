@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Enemy
   - OneWayPlatform
   - KillBox
   - scoreManager
   - TankEnemy
+  - BasicEnemy
+  - FlyingEnemy
   layers:
   - Default
   - TransparentFX

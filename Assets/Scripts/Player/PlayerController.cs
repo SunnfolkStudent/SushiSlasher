@@ -155,10 +155,18 @@ public class PlayerController : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
+          if (other.gameObject.CompareTag("BasicEnemy") == true) 
+          {
             TakeDamage();
-        }    
+        }  
+          if (other.gameObject.CompareTag("FlyingEnemy") == true)
+          {
+              TakeDamage();
+          }  
+          if (other.gameObject.CompareTag("TankEnemy") == true)
+          {
+              TakeDamage();
+          }  
     }
 
     private void Attack()

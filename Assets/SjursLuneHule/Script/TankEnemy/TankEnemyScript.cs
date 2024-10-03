@@ -30,18 +30,22 @@ public class TankEnemyScript : MonoBehaviour
             _damageCooldownTimer = Time.time + damageCooldown;
         }
     }
-   /* private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("KillBox") == true)
         {
             speed *= -1;
             transform.localScale = new Vector2(transform.localScale.x * -1f, 1f);
         }
-    }*/
+    }
 
     private void OnDestroy()
     {
         Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
         ScoreManager.Score += 400;
+        
+        {
+            
+        }
     }
 }
