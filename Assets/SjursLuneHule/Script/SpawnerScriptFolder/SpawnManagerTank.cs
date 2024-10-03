@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnManagerTank : MonoBehaviour
 {
-    public float time = 10f;
+    public float time = 20f;
     public float timeCounter = 0f;
 
     public GameObject[] spawnPoints;
@@ -18,11 +18,15 @@ public class SpawnManagerTank : MonoBehaviour
             timeCounter = Time.time + Random.Range(1, time);
         }
         
-        /* if you use this code you can reduce spawn time at certain score levels WOWIE
-         if (ScoreManager.Score == Number)
+
+         if (ScoreManager.Score == 8000)
          {
-            time = Number to replace the standard time;
-        }
-         */
+             time = 10f;
+         }
+
+         if (ScoreManager.Score == 14000)
+         {
+             time = 5f;
+         }
     }
 }

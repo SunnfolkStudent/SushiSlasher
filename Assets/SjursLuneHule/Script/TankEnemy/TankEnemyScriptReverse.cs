@@ -28,23 +28,14 @@ public class TankEnemyScriptReverse : MonoBehaviour
             _damageCooldownTimer = Time.time + damageCooldown;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+   /* private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("KillBox") == true)
         {
             speed *= -1;
             transform.localScale = new Vector2(transform.localScale.x * -1f, 1f);
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player") == true)
-        {
-            TakeDamage();
-            Destroy(other.gameObject);
-        }
-    }
+    }*/
     
     private void OnDestroy()
     {

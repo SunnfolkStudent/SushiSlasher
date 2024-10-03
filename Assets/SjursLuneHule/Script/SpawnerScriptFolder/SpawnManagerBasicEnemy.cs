@@ -19,11 +19,18 @@ public class SpawnManagerBasicEnemy : MonoBehaviour
             timeCounter = Time.time + Random.Range(1, time);
         }
         
-        /* if you use this code you can reduce spawn time at certain score levels WOWIE
-         if (ScoreManager.Score == Number)
+       
+         if (ScoreManager.Score == 1500)
          {
-            time = Number to replace the standard time;
-        }
-         */
+             time = 5;
+         }
+
+         if (ScoreManager.Score == 6700)
+         {
+             time = 2.5f;
+         }
+         
+         
+         
     }
 }

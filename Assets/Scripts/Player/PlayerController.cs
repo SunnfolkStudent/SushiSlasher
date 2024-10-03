@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
         if (attacking)
         {
-            var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 2f, LayerMask.GetMask("Enemy"));
+            var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 0.2f, LayerMask.GetMask("Enemy"));
             if (enemies != null)
             {
                 foreach (var enemy in enemies)
@@ -180,17 +180,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnDeath()
     {
-        if (ScoreManager.Score <= 1000)
+        if (ScoreManager.Score <= 3000)
         {
             SceneManager.LoadScene("Scenes/EndScreenLowScore");
         }
 
-        if (ScoreManager.Score >= 1000 && ScoreManager.Score <= 5000)
+        if (ScoreManager.Score >= 3000 && ScoreManager.Score <= 20000)
         {
             SceneManager.LoadScene("Scenes/EndSceneMediumScore");
         }
 
-        if (ScoreManager.Score >= 5000)
+        if (ScoreManager.Score >= 20000)
         {
             SceneManager.LoadScene("Scenes/EndSceneHighScore");
         }
