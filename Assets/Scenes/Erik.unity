@@ -933,7 +933,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.65625, y: 0.875}
+    oldSize: {x: 0.46875, y: 1}
     newSize: {x: 0.46875, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -995,7 +995,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.65625, y: 0.875}
+    oldSize: {x: 0.46875, y: 1}
     newSize: {x: 0.46875, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1774,6 +1774,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3691094771441638045, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691094771441638045, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
@@ -1831,7 +1835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: attackCooldown
-      value: 0.75
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5269371549145703697, guid: fddaf3528d11f2c4c8bade5915da4a1a, type: 3}
       propertyPath: playerSlashSounds.Array.size
