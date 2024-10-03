@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyTemariDeathSound:
-  - {fileID: 8300000, guid: 8bb549d6b503ace41b60894f26546f26, type: 3}
-  - {fileID: 8300000, guid: d021aad85e8d1854990b2a5439c341fe, type: 3}
+  - {fileID: 8300000, guid: 2b553aa479ba2764d835c2c1ce6fbd87, type: 3}
+  - {fileID: 8300000, guid: 704233d8006c81d45ad2e0a54d2d88b2, type: 3}
