@@ -8,6 +8,10 @@ public class TankEnemyScript : MonoBehaviour
     private float damageCooldown = 0f;
     private float _damageCooldownTimer;
     
+    [Header("Audio")]
+    public GameObject onDeathSoundPlayer;
+    public Transform onDeathSoundPlayerTransform;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();//finds the rigidbody component
@@ -27,6 +31,7 @@ public class TankEnemyScript : MonoBehaviour
 
         if (enemyHealth < 0)
         {
+            Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
             Destroy(gameObject);
             ScoreManager.Score += 400;
         }
