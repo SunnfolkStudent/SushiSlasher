@@ -1,8 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,13 +32,21 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] playerHitSounds;
     public AudioClip[] playerJumpSounds;
+    public AudioClip[] playerSlashSounds;
     //public AudioClip playerDeathSound;
     private AudioSource _audioSource;
     
     [Header("Animation")]
-    private Animator _animator;
+    public Animator _animator;
+    
+    [Header("Attacking")]
+    public float attackCooldown = 1f;
+    //private int attackCounter = 0;
+    private float _attackCooldownTimer;
     
     private bool isFacingRight = true;
+    
+    //public UnityEvent OnLandEvent;
     
     private void Start()
     {
@@ -43,7 +55,9 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
     }
-
+    
+    //TODO: Put jumping into it's own functions like attacking to be able to implement separate jump attack
+    
     private void Update()
     {
         playerIsGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize, 0f, whatIsGround);
@@ -57,6 +71,12 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody2D.linearVelocityY /= 3f; //øk det for å hoppe mindre
         }
+
+        if (_input.Attack && Time.time > _attackCooldownTimer)
+        {
+            _attackCooldownTimer = Time.time + attackCooldown;
+            Attack();
+        }
         
         switch (isFacingRight)
         {
@@ -66,9 +86,15 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         
-        UpdateAnimation();
+        _animator.SetFloat("SpeedY", Mathf.Abs(_rigidbody2D.linearVelocityY));
+        _animator.SetFloat("Speed", Mathf.Abs(_rigidbody2D.linearVelocityX));
     }
-
+    /*
+    public void OnLanding()
+    {
+            _animator.SetBool("isJumping", false);
+    }
+    */
     private void FixedUpdate()
     {
         _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
@@ -116,29 +142,19 @@ public class PlayerController : MonoBehaviour
         }    
     }
 
-    private void UpdateAnimation()
+    private void Attack()
     {
-        if (playerIsGrounded) // This checks if the player is grounded
-        {
-            if (_input.Horizontal != 0) // This checks if we have any input
-            {
-                _animator.Play("samurai_run"); // If we have input set our animation to Walk
-            }
-            else // This checks if we have no input
-            {
-                _animator.Play("samurai_idle"); // If we have no input, set out animation to Idle
-            }
-        }
-        else // this checks if the player is Not grounded
-        {
-            if (_rigidbody2D.linearVelocityY > 0) // This checks our velocity and if it is above 0
-            {
-                _animator.Play("Player_Jump"); // If we are moving upwards, set animation to Jump
-            }
-            else // This checks our velocity and if it is below 0
-            {
-                _animator.Play("Player_Fall"); // If we are moving downwards, set animation to Fall
-            }
-        }
+        _audioSource.PlayOneShot(playerSlashSounds[Random.Range(0, playerSlashSounds.Length)]);
+        //attackCounter += 1;
+        //_animator.SetInteger("Slash", attackCounter);
+        _animator.SetBool("isAttacking", true);
+        Invoke("AttackEnd", 1f);
     }
+
+    private void AttackEnd()
+    {
+        //attackCounter = 0;
+        _animator.SetBool("isAttacking", false);
+    }
+    
 }
