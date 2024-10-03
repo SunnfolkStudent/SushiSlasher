@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     public float attackCooldown = 1f;
     //private int attackCounter = 0;
     private float _attackCooldownTimer;
+    private bool attacking = false;
+    public Transform _attackPoint;
     
     private bool isFacingRight = true;
     
@@ -92,6 +94,18 @@ public class PlayerController : MonoBehaviour
         
         _animator.SetFloat("SpeedY", Mathf.Abs(_rigidbody2D.linearVelocityY));
         _animator.SetFloat("Speed", Mathf.Abs(_rigidbody2D.linearVelocityX));
+
+        if (attacking)
+        {
+            var enemies = Physics2D.OverlapCircleAll(_attackPoint.position, 2f, LayerMask.GetMask("Enemy"));
+            if (enemies != null)
+            {
+                foreach (var enemy in enemies)
+                {
+                    Destroy(enemy.gameObject);
+                }
+            }
+        }
     }
     /*
     public void OnLanding()
@@ -152,11 +166,13 @@ public class PlayerController : MonoBehaviour
         //attackCounter += 1;
         //_animator.SetInteger("Slash", attackCounter);
         _animator.SetBool("isAttacking", true);
+        attacking = true;
         Invoke("AttackEnd", 0.6f);
     }
 
     private void AttackEnd()
     {
+        attacking = false;
         //attackCounter = 0;
         _animator.SetBool("isAttacking", false);
     }

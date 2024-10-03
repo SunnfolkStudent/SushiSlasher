@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7631744687594687816}
   - component: {fileID: 8848085552033033091}
   - component: {fileID: 7296746442959769483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Temari
   m_TagString: Enemy
   m_Icon: {fileID: 0}

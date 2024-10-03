@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,17 +21,10 @@ public class BasicEnemyScript : MonoBehaviour
     {
         rb.linearVelocityX = speed;//sets the movement to move along the X,axis * speed
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    private void OnDestroy()
     {
-        if (other.gameObject.CompareTag("Player") == true)//checks if enemy has hit a kill box
-        {
-            
-            var clone = Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
-            clone.GetComponent<AudioManager>();
-            
-            //Destroy(gameObject);//destroys enemy
-            ScoreManager.Score += 100;//adds a score of 100
-        }
+        Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
+        ScoreManager.Score += 100;
     }
 }
