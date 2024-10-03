@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - OneWayPlatform
+  - KillBox
+  - scoreManager
+  - TankEnemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
