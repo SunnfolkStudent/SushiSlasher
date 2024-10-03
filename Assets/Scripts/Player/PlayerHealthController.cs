@@ -17,7 +17,7 @@ public class PlayerHealthController : MonoBehaviour
             }
             else
             {
-                hearts[i].color = new Color(1, 1, 1, 0.2f);
+                hearts[i].color = new Color(1, 1, 1, 0f);
             }
         }    
     }
