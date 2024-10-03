@@ -8,6 +8,9 @@ public class TankEnemyScriptReverse : MonoBehaviour
     private float damageCooldown = 0f;
     private float _damageCooldownTimer;
     
+    public GameObject onDeathSoundPlayer;
+    public Transform onDeathSoundPlayerTransform;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();//finds the rigidbody component
@@ -45,6 +48,7 @@ public class TankEnemyScriptReverse : MonoBehaviour
     
     private void OnDestroy()
     {
+        Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
         ScoreManager.Score += 400;
     }
 }

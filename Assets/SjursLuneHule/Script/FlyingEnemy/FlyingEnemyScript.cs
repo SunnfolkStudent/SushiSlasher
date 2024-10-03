@@ -4,7 +4,11 @@ public class FlyingEnemyScript : MonoBehaviour
 {
     private float speed = 10f; //dictates speed of enemy
     public Rigidbody2D rb; //gives it interaction with its rigidbody?
-
+    
+    [Header("Audio")]
+    public GameObject onDeathSoundPlayer;
+    public Transform onDeathSoundPlayerTransform;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();//finds the rigidbody component
@@ -16,6 +20,7 @@ public class FlyingEnemyScript : MonoBehaviour
 
      private void OnDestroy()
      {
+         Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
          ScoreManager.Score += 200;
      }
 }

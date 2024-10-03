@@ -50,6 +50,7 @@ public class TankEnemyScript : MonoBehaviour
 
     private void OnDestroy()
     {
+        Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
         ScoreManager.Score += 400;
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1182581559219404312
+--- !u!1 &8663845754632020320
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3566121275394844994}
-  - component: {fileID: 2461229836070039762}
-  - component: {fileID: 2833719730121587644}
+  - component: {fileID: 8523913991627543208}
+  - component: {fileID: 511777483565012554}
+  - component: {fileID: 5277686345707037721}
   m_Layer: 0
-  m_Name: BigEnemyDeathSounds
+  m_Name: FlyingEnemyDeathSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3566121275394844994
+--- !u!4 &8523913991627543208
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182581559219404312}
+  m_GameObject: {fileID: 8663845754632020320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36052403, y: 0.15640649, z: -10.003094}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2461229836070039762
+--- !u!82 &511777483565012554
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182581559219404312}
+  m_GameObject: {fileID: 8663845754632020320}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -130,16 +130,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2833719730121587644
+--- !u!114 &5277686345707037721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182581559219404312}
+  m_GameObject: {fileID: 8663845754632020320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35712fbf96560224eae23e0aa943f7ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 58b7c4f3ee7c3a6498e0203685d30a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigEnemyDeathSound: {fileID: 8300000, guid: 56b330bd6368ae44e9ead0c365dc0c71, type: 3}
+  flyingEnemyDeathSounds:
+  - {fileID: 8300000, guid: 2b553aa479ba2764d835c2c1ce6fbd87, type: 3}
+  - {fileID: 8300000, guid: 704233d8006c81d45ad2e0a54d2d88b2, type: 3}
