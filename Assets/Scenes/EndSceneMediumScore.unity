@@ -830,7 +830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press SPACEBAR to continue
+  m_text: Press SPACEBAR to quit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d47ea7bb66d6d9940a0fea4d78b3baf9, type: 2}
   m_sharedMaterial: {fileID: 6999856222735447022, guid: d47ea7bb66d6d9940a0fea4d78b3baf9, type: 2}

@@ -17,13 +17,25 @@ public class ScoreSceneManager : MonoBehaviour
     {
         if (_input.Play) // Change this if you want to use a different key
         {
-            NextScene();
+            //NextScene();
+            QuitGame();
         }
     }
 
+    /*
     private void NextScene()
     {
         SceneManager.LoadScene("Scenes/PressToPlay");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    */
+
+    private void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit()
+#endif
     }
 }
