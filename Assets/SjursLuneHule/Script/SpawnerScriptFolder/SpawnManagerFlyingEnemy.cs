@@ -11,7 +11,7 @@ public class SpawnManagerFlyingEnemy : MonoBehaviour
     private void Update()
     {
         
-        if (timeCounter < Time.time && ScoreManager.Score >= 500)
+        if (timeCounter < Time.time && ScoreManager.Score >= 6000)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
             Instantiate(enemyPrefab, spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);

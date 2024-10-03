@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -148,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            RestartScene();
+            OnDeath();
         }    
     }
     
@@ -175,5 +176,23 @@ public class PlayerController : MonoBehaviour
         attacking = false;
         //attackCounter = 0;
         _animator.SetBool("isAttacking", false);
+    }
+
+    private void OnDeath()
+    {
+        if (ScoreManager.Score <= 1000)
+        {
+            SceneManager.LoadScene("Scenes/EndScreenLowScore");
+        }
+
+        if (ScoreManager.Score >= 1000 && ScoreManager.Score <= 5000)
+        {
+            SceneManager.LoadScene("Scenes/EndSceneMediumScore");
+        }
+
+        if (ScoreManager.Score >= 5000)
+        {
+            SceneManager.LoadScene("Scenes/EndSceneHighScore");
+        }
     }
 }
