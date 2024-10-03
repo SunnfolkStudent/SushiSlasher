@@ -29,7 +29,7 @@ public class BasicEnemyScript : MonoBehaviour
             var clone = Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
             clone.GetComponent<AudioManager>();
             
-            Destroy(gameObject);//destroys enemy
+            //Destroy(gameObject);//destroys enemy
             ScoreManager.Score += 100;//adds a score of 100
         }
     }
