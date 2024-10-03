@@ -30,7 +30,6 @@ public class BasicEnemyScript : MonoBehaviour
             clone.GetComponent<AudioManager>();
             
             Destroy(gameObject);//destroys enemy
-            Destroy(other.gameObject);//destroys gameobject enemy has hit
             ScoreManager.Score += 100;//adds a score of 100
         }
     }
