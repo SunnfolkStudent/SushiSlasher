@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  onDeathSoundPlayer: {fileID: 0}
+  onDeathSoundPlayerTransform: {fileID: 0}
 --- !u!50 &7631744687594687816
 Rigidbody2D:
   serializedVersion: 5

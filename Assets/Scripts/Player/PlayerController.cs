@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour
     //private int attackCounter = 0;
     private float _attackCooldownTimer;
     
+    public float jumpAttackCooldown = 1f;
+    private float _jumpAttackCooldownTimer;
+    
     private bool isFacingRight = true;
     
     //public UnityEvent OnLandEvent;
@@ -64,14 +67,22 @@ public class PlayerController : MonoBehaviour
         
         if (_input.Jump && playerIsGrounded)
         {
+            //_animator.SetBool("isJumping", true);
             _audioSource.PlayOneShot(playerHitSounds[Random.Range(0, playerHitSounds.Length)]);
             _rigidbody2D.linearVelocityY = jumpSpeed;
-        } 
+        }
         else if (_input.releaseJump && !playerIsGrounded && _rigidbody2D.linearVelocity.y > 0f)
         {
             _rigidbody2D.linearVelocityY /= 3f; //øk det for å hoppe mindre
         }
 
+        //if (playerIsGrounded && _rigidbody2D.linearVelocity.y > 0f)
+        /*
+        if (playerIsGrounded)
+        {
+            _animator.SetBool("isJumping", false);
+        }
+        */
         if (_input.Attack && Time.time > _attackCooldownTimer)
         {
             _attackCooldownTimer = Time.time + attackCooldown;
@@ -156,5 +167,4 @@ public class PlayerController : MonoBehaviour
         //attackCounter = 0;
         _animator.SetBool("isAttacking", false);
     }
-    
 }
