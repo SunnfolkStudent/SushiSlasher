@@ -188,17 +188,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnDeath()
     {
-        if (ScoreManager.Score <= 3000)
+        if (ScoreManager.Score <= 500)
         {
             SceneManager.LoadScene("Scenes/EndScreenLowScore");
         }
 
-        if (ScoreManager.Score >= 3000 && ScoreManager.Score <= 20000)
+        if (ScoreManager.Score >= 500 && ScoreManager.Score <= 2000)
         {
             SceneManager.LoadScene("Scenes/EndSceneMediumScore");
         }
 
-        if (ScoreManager.Score >= 20000)
+        if (ScoreManager.Score >= 2000)
         {
             SceneManager.LoadScene("Scenes/EndSceneHighScore");
         }
