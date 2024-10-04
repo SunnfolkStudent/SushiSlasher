@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class BasicEnemyScript : MonoBehaviour
 {
-    private float speed = 11; //speed for the basic enemy
+    private float speed = 9; //speed for the basic enemy
     public Rigidbody2D rb; //variable for the rigidbody
     
     [Header("Audio")]
