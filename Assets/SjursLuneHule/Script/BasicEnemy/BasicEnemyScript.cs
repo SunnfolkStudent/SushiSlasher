@@ -24,7 +24,11 @@ public class BasicEnemyScript : MonoBehaviour
     
     private void OnDestroy()
     {
-        Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity); 
+        if (onDeathSoundPlayerTransform.transform.position.x <= 9.9f)
+        {
+            Instantiate(onDeathSoundPlayer, onDeathSoundPlayerTransform.position, Quaternion.identity);
+        }
+        
         ScoreManager.Score += 100;
     }
 }
