@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D.linearVelocityX = _input.Horizontal * moveSpeed;
     }
-
+    
     private void Flip()
     {
         isFacingRight = !isFacingRight;
